@@ -211,7 +211,7 @@
 
 .visual-refresh .bg__960e4 {
     background: var(--background-image);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
