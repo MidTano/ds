@@ -211,8 +211,8 @@
 
 .visual-refresh .bg__960e4 {
     background: var(--background-image);
-    background-size: 50% 50%;  /* принудительное растягивание */
-    background-repeat: repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
 }
 
