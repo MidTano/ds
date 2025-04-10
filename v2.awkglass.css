@@ -1,6 +1,6 @@
 /*
- *name          Водный Атриум
- *author        @ungiglio (модифицировано)
+ *name          Погруженный Атриум
+ *author        @ungiglio (modified)
  *internalcode  AWKGLASS
  *version       #20250404
 */
@@ -15,72 +15,74 @@
 
     --file-ver: "#20250404";
 
-    /* Основные цвета изображения */
-    --water-dark: #1A5D8F;
-    --water-light: #63A0C7;
-    --building-beige: #F0EBE0;
-    --plant-green: #4A743E;
-    --sky-blue: #7FB9E6;
-    --terracotta: #BC6C4D;
-    --lily-purple: #9D4C8C;
-    --door-white: #E8E6DD;
-    --frame-brown: #3C2A1D;
+    /* RGB цвета с изображения */
+    --rgb-highlight: 26, 93, 143; /* Насыщенная синяя вода */
+    --rgb-highlight-light: 99, 160, 199; /* Светло-синяя вода */
+    --rgb-building: 240, 235, 224; /* Белый/бежевый цвет зданий */
+    --rgb-plants: 74, 116, 62; /* Зеленый цвет растений */
+    --rgb-sky: 127, 185, 230; /* Голубое небо */
+    --rgb-terracotta: 188, 108, 77; /* Терракотовый цвет */
+    --rgb-lilies: 157, 76, 140; /* Фиолетовый цвет лилий */
+    --rgb-door: 232, 230, 221; /* Белый цвет двери */
+    --rgb-dark-frame: 60, 42, 29; /* Темно-коричневый каркас */
+    
+    /* Цвета статусов */
+    --rgb-online-color: 74, 116, 62; /* Зеленый для онлайн */
+    --rgb-afk-color: 188, 108, 77; /* Терракотовый для AFK */
+    --rgb-dnd-color: 157, 76, 140; /* Фиолетовый для DND */
+    --rgb-streaming-color: 99, 160, 199; /* Светло-синий для стримов */
+    --rgb-close-button: 157, 76, 140; /* Фиолетовый для кнопки закрытия */
+    
+    /* Кастомные цвета */
+    --custom-channel-header-color: rgb(var(--rgb-sky));
+    --custom-channel-icon: rgb(var(--rgb-highlight-light));
+    --custom-selected-channel-color: rgb(var(--rgb-highlight-light));
+    --cat-custom-color: rgb(var(--rgb-terracotta));
+    --cat-custom-color-rgba: var(--rgb-terracotta);
+    --status-danger-rgb: rgb(var(--rgb-dnd-color));
+    --darkPurple-background: rgba(26, 93, 143, 0.7); /* Насыщенная синяя вода с прозрачностью */
 
     /*Background*/
     --background-image: var(--custom-image-url);
     --app-blur: 8px;
-    --button-background: linear-gradient(60deg, var(--water-dark), var(--sky-blue));
-    --button-background-static: var(--water-dark);
-    --background-primary: rgba(26, 93, 143, 0.26) !important;
-    --background-secondary: rgba(60, 42, 29, 0.500) !important;
-    --background-tertiary: rgba(26, 93, 143, 0.815) !important;
-    --background-modifier-hover: rgba(99, 160, 199, 0.300);
-    --custom-spoiler-color: rgb(157, 76, 140);
+    --button-background: linear-gradient(60deg, var(--highlight), var(--highlight-darker));
+    --button-background-static: var(--highlight);
+    --background-primary: rgba(24, 24, 24, 0.26) !important;
+    --background-secondary: rgba(26, 26, 26, 0.500) !important;
+    --background-tertiary: rgba(26, 26, 26, 0.815) !important;
+    --background-modifier-hover: rgba(20, 20, 20, 0.500);
+    --custom-spoiler-color: rgb(var(--rgb-lilies));
     --box-shadow: 0 0 10px 0px black;
-    --darkPurple-background: rgba(26, 93, 143, 0.75);
 
     --custom-logo: url('https://ungiglio.github.io/DiscordDiscordia/awkglass_code/assets/LandeDiscordia.png');
     --custom-logo-hover: url('https://ungiglio.github.io/DiscordDiscordia/awkglass_code/assets/LandeDiscordiaHover.png');
 
     /*other*/
-    --highlight: rgb(99, 160, 199);
-    --rgb-highlight: 99, 160, 199;
+    --highlight: rgb(var(--rgb-highlight));
     --highlight-darker: hsl(from var(--highlight) calc(h + 15) s calc(l - 35));
     --text: var(--text-muted) !important;
-    --online-color: rgb(74, 116, 62) !important;
-    --rgb-online-color: 74, 116, 62;
-    --afk-color: rgb(188, 108, 77) !important;
-    --rgb-afk-color: 188, 108, 77;
-    --dnd-color: rgb(157, 76, 140) !important;
-    --rgb-dnd-color: 157, 76, 140;
-    --streaming-color: rgb(127, 185, 230) !important;
-    --rgb-streaming-color: 127, 185, 230;
-    --scrollbar-thin-thumb: var(--water-dark) !important;
-    --scrollbar-auto-thumb: var(--water-dark) !important;
-    --scrollbar-auto-scrollbar-color-thumb: var(--water-dark) !important;
+    --online-color: rgb(var(--rgb-online-color)) !important;
+    --afk-color: rgb(var(--rgb-afk-color)) !important;
+    --dnd-color: rgb(var(--rgb-dnd-color)) !important;
+    --streaming-color: rgb(var(--rgb-streaming-color)) !important;
+    --scrollbar-thin-thumb: var(--highlight) !important;
+    --scrollbar-auto-thumb: var(--highlight) !important;
+    --scrollbar-auto-scrollbar-color-thumb: var(--highlight) !important;
     --scrollbar-thin-track: transparent;
     --scrollbar-auto-track: transparent;
     --scrollbar-auto-scrollbar-color-track: transparent;
     --transition-time: 0.3s;
     --show-original-title: 0;
     --show-custom-title: 1;
-    --custom-title-text: "Водный Атриум";
+    --custom-title-text: "Погруженный Атриум";
     --custom-title-font-size: 16px;
     --custom-title-font-weight: normal;
     --custom-title-margin-top: 0px;
     --custom-title-margin-left: 0px;
 
-    /* Цвета каналов */
-    --custom-channel-icon: var(--water-light);
-    --custom-channel-header-color: var(--building-beige);
-    --custom-selected-channel-color: var(--sky-blue);
-    --cat-custom-color: var(--terracotta);
-    --cat-custom-color-rgba: 188, 108, 77;
-    --status-danger-rgb: var(--rgb-dnd-color);
-    
-    --logo-primary: var(--water-dark) !important;
-    --control-brand-foreground: var(--water-dark) !important;
-    --control-brand-foreground-new: var(--water-dark) !important;
+    --logo-primary: var(--highlight) !important;
+    --control-brand-foreground: var(--highlight) !important;
+    --control-brand-foreground-new: var(--highlight) !important;
     --background-mentioned: rgba(var(--rgb-highlight), 14%) !important;
     --background-mentioned-hover: rgba(var(--rgb-highlight), 20%);
     --background-message-hover: color-mix(in oklab, hsl(var(--primary-900-hsl) / 0.06) 100%, hsl(var(--theme-base-color-hsl, 0 0% 0%) / 0.06) var(--theme-base-color-amount, 0%)) !important;
@@ -89,20 +91,115 @@
     --background-message-automod: rgba(var(--rgb-highlight), 20%) !important;
     --background-message-automod-hover: rgba(var(--rgb-highlight), 40%) !important;
     --channeltextarea-background: color-mix(in oklab, var(--primary-560) 100%, var(--theme-base-color, black) var(--theme-base-color-amount, 0%)) !important;
-    --text-link: var(--water-dark) !important;
+    --text-link: var(--highlight) !important;
     --text-link-low-saturation: rgba(var(--rgb-highlight), 50%) !important;
     --text-positive: var(--online-color) !important;
     --text-warning: var(--afk-color) !important;
     --text-danger: var(--dnd-color) !important;
-    --text-brand: var(--water-dark) !important;
+    --text-brand: var(--highlight) !important;
     --channels-default: var(--text) !important;
-    --interactive-muted: rgba(232, 230, 221, 0.493) !important;
-    --button-danger-background-disabled: rgba(var(--rgb-dnd-color), 20%) !important;
-    --button-danger-background: rgba(var(--rgb-dnd-color), 100%) !important;
-    --button-danger-background-hover: rgba(var(--rgb-dnd-color), 70%) !important;
-    --button-danger-background-active: rgba(var(--rgb-dnd-color), 100%) !important;
-    
-    --ver: "водный атриум ("var(--current-ver)") "var(--file-ver);
+    --interactive-muted: rgba(180, 180, 180, 0.493) !important;
+    --button-danger-background-disabled: rgba(var(--rgb-close-button), 20%) !important;
+    --button-danger-background: rgba(var(--rgb-close-button), 100%) !important;
+    --button-danger-background-hover: rgba(var(--rgb-close-button), 70%) !important;
+    --button-danger-background-active: rgba(var(--rgb-close-button), 100%) !important;
+    --button-outline-danger-border: rgba(var(--rgb-close-button), 100%) !important;
+    --button-outline-danger-background: rgba(var(--rgb-close-button), 50%) !important;
+    --button-outline-danger-background-hover: rgba(var(--rgb-close-button), 100%) !important;
+    --button-outline-danger-background-active: rgba(var(--rgb-close-button), 100%) !important;
+    --button-outline-danger-text: rgb(255, 255, 255) !important;
+    --button-outline-danger-text-hover: rgb(255, 255, 255) !important;
+    --button-outline-danger-text-active: rgba(var(--rgb-close-button), 100%) !important;
+    --button-outline-danger-border-hover: rgba(var(--rgb-close-button), 70%) !important;
+    --button-outline-danger-border-active: rgba(var(--rgb-close-button), 100%) !important;
+    --button-positive-background-disabled: rgba(var(--rgb-online-color), 20%) !important;
+    --button-positive-background: rgba(var(--rgb-online-color), 20%) !important;
+    --button-positive-background-hover: rgba(var(--rgb-online-color), 70%) !important;
+    --button-positive-background-active: rgba(var(--rgb-online-color), 100%) !important;
+    --button-outline-positive-border: rgba(var(--rgb-online-color), 50%) !important;
+    --button-outline-positive-background: rgba(var(--rgb-online-color), 50%) !important;
+    --button-outline-positive-background-hover: rgba(var(--rgb-online-color), 70%) !important;
+    --button-outline-positive-background-active: rgba(var(--rgb-online-color), 100%) !important;
+    --button-outline-positive-text: rgba(var(--rgb-online-color), 50%) !important;
+    --button-outline-positive-text-hover: rgba(var(--rgb-online-color), 70%) !important;
+    --button-outline-positive-text-active: rgba(var(--rgb-online-color), 100%) !important;
+    --button-outline-positive-border-hover: rgba(var(--rgb-online-color), 70%) !important;
+    --button-outline-positive-border-active: rgba(var(--rgb-online-color), 100%) !important;
+    --button-primary-background-disabled: rgba(var(--rgb-highlight), 20%) !important;
+    --button-primary-background: rgba(var(--rgb-highlight), 20%) !important;
+    --button-primary-background-hover: rgba(var(--rgb-highlight), 70%) !important;
+    --button-primary-background-active: rgba(var(--rgb-highlight), 100%) !important;
+    --button-outline-primary-border: rgba(var(--rgb-highlight), 50%) !important;
+    --button-outline-primary-background: rgba(var(--rgb-highlight), 50%) !important;
+    --button-outline-primary-background-hover: rgba(var(--rgb-highlight), 70%) !important;
+    --button-outline-primary-background-active: rgba(var(--rgb-highlight), 100%) !important;
+    --button-outline-primary-text: rgba(var(--rgb-highlight), 50%) !important;
+    --button-outline-primary-text-hover: rgba(var(--rgb-highlight), 70%) !important;
+    --button-outline-primary-text-active: rgba(var(--rgb-highlight), 100%) !important;
+    --button-outline-primary-border-hover: rgba(var(--rgb-highlight), 70%) !important;
+    --button-outline-primary-border-active: rgba(var(--rgb-highlight), 100%) !important;
+    --button-secondary-background-disabled: rgba(var(--rgb-highlight), 20%) !important;
+    --button-secondary-background: rgba(var(--rgb-highlight), 20%) !important;
+    --button-secondary-background-hover: rgba(var(--rgb-highlight), 70%) !important;
+    --button-secondary-background-active: rgba(var(--rgb-highlight), 100%) !important;
+    --button-outline-secondary-border: rgba(var(--rgb-highlight), 50%) !important;
+    --button-outline-secondary-background: rgba(var(--rgb-highlight), 50%) !important;
+    --button-outline-secondary-background-hover: rgba(var(--rgb-highlight), 70%) !important;
+    --button-outline-secondary-background-active: rgba(var(--rgb-highlight), 100%) !important;
+    --button-outline-secondary-text: rgba(var(--rgb-highlight), 50%) !important;
+    --button-outline-secondary-text-hover: rgba(var(--rgb-highlight), 70%) !important;
+    --button-outline-secondary-text-active: rgba(var(--rgb-highlight), 100%) !important;
+    --button-outline-secondary-border-hover: rgba(var(--rgb-highlight), 70%) !important;
+    --button-outline-secondary-border-active: rgba(var(--rgb-highlight), 100%) !important;
+    --button-brand-background-disabled: rgba(var(--rgb-highlight), 20%) !important;
+    --button-brand-background: rgba(var(--rgb-highlight), 20%) !important;
+    --button-brand-background-hover: rgba(var(--rgb-highlight), 70%) !important;
+    --button-brand-background-active: rgba(var(--rgb-highlight), 100%) !important;
+    --button-outline-brand-border: rgba(var(--rgb-highlight), 50%) !important;
+    --button-outline-brand-background: rgba(var(--rgb-highlight), 50%) !important;
+    --button-outline-brand-background-hover: rgba(var(--rgb-highlight), 70%) !important;
+    --button-outline-brand-background-active: rgba(var(--rgb-highlight), 100%) !important;
+    --button-outline-brand-text: rgba(var(--rgb-highlight), 50%) !important;
+    --button-outline-brand-text-hover: rgba(var(--rgb-highlight), 70%) !important;
+    --button-outline-brand-text-active: rgba(var(--rgb-highlight), 100%) !important;
+    --button-outline-brand-border-hover: rgba(var(--rgb-highlight), 70%) !important;
+    --button-outline-brand-border-active: rgba(var(--rgb-highlight), 100%) !important;
+    --search-popout-option-user-nickname: var(--highlight) !important;
+    --search-popout-option-user-username: rgba(var(--rgb-highlight), 70%) !important;
+    --search-popout-option-filter-text: rgba(var(--rgb-highlight), 70%) !important;
+    --search-popout-date-picker-border: 1px solid var(--highlight) !important;
+    --status-danger-background: var(--status-danger) !important;
+    --channel-header-color: var(--custom-channel-header-color) !important;
+    --channel-icon: var(--custom-channel-icon) !important;
+    --selected-channel-color: var(--custom-selected-channel-color) !important;
+    --cat-color: var(--cat-custom-color) !important;
+    --cat-color-rgba: var(--cat-custom-color-rgba) !important;
+    --status-danger: var(--status-danger-rgb) !important;
+    --status-warning: var(--afk-color) !important;
+    --status-positive: var(--online-color) !important;
+    --menu-item-default-active-bg: var(--highlight) !important;
+    --menu-item-default-hover-bg: var(--highlight) !important;
+    --background-channel-selected: rgba(var(--rgb-highlight), 10%) !important;
+    --app-border-frame: color-mix(in oklab,hsl(var(--opacity-24-hsl)/0.23921568627450981) 100%,hsl(var(--theme-base-color-hsl,0 0% 0%)/0.23921568627450981) var(--theme-base-color-amount,0%)) !important;
+
+    --bg-brand: var(--highlight) !important;
+    --button-filled-brand-background: var(--highlight) !important;
+    --bg-base-tertiary: var(--background-secondary) !important;
+    --bg-base-secondary: var(--background-tertiary) !important;
+    --card-primary-bg: var(--background-primary) !important;
+    --background-base-lower: var(--background-tertiary) !important;
+    --background-floating: black !important;
+    --background-surface-higher: black !important;
+    --background-base-low: var(--background-secondary) !important;
+    --background-secondary-alt: var(--background-secondary) !important;
+    --checkbox-border-checked: var(--online-color) !important;
+    --checkbox-background-checked: var(--online-color) !important;
+    --background-surface-high: var(--background-tertiary) !important;
+    --text-feedback-positive: var(--online-color) !important;
+    --spoiler-hidden-background: var(--custom-spoiler-color) !important;
+    --spoiler-hidden-background-hover: var(--highlight) !important;
+
+    --ver: "Погруженный Атриум ("var(--current-ver)") "var(--file-ver);
 }
 
 .info__2debe::before {
@@ -123,7 +220,7 @@
 .interactive__972a0:hover {
     background: var(--button-background);
     border-radius: 3px;
-    color: var(--building-beige);
+    color: rgb(233, 233, 233);
 }
 
 #app-mount .guilds_c48ade [class*=pill] span[style*="height: 40"] {
@@ -721,7 +818,7 @@ background: var(--darkPurple-background);
 
 .lookFilled__201d5.colorBrand__201d5:hover {
     /* forum new post button hover */
-    background-color: rgb(178, 52, 255);
+    background-color: rgb(var(--rgb-highlight-light));
 }
 
 .pinIcon__08166 {
@@ -731,13 +828,13 @@ background: var(--darkPurple-background);
 
 .visual-refresh .reaction__23977.reactionMe__23977 {
     /* forum reaction color */
-    background-color: rgba(178, 102, 255, 0.3);
+    background-color: rgba(var(--rgb-highlight-light), 0.3);
     border-color: var(--highlight);
 }
 
 .visual-refresh .reaction_f8896c.reactionMe_f8896c {
     /* forum reaction color */
-    background-color: rgba(178, 102, 255, 0.3);
+    background-color: rgba(var(--rgb-highlight-light), 0.3);
     border-color: var(--highlight);
 }
 
@@ -805,10 +902,10 @@ background: var(--darkPurple-background);
 
 .vc-ranb-button {
     /* read all button */
-    border: 1px solid var(--water-dark);
+    border: 1px solid var(--highlight);
     border-radius: 8px;
-    background-color: var(--water-dark);
-    color: var(--building-beige);
+    background-color: var(--highlight);
+    color: white;
     width: 80%;
     margin: 5% 10% 10% 10%;
     padding: 5% 2%;
@@ -817,8 +914,8 @@ background: var(--darkPurple-background);
 
 .vc-ranb-button:hover {
     /* read all button */
-    border: 1px solid var(--water-dark);
-    background-color: color-mix(in srgb, var(--water-dark), #000 30%);
+    border: 1px solid var(--highlight);
+    background-color: color-mix(in srgb, var(--highlight), #000 30%);
 }
 
 .visual-refresh .panels_c48ade {
@@ -846,7 +943,7 @@ background: var(--darkPurple-background);
     flex-shrink: 0;
     position: relative;
     border-radius: 8px;
-    border: 1px solid var(--water-dark);
+    border: 1px solid var(--highlight);
     background: var(--darkPurple-background);
     margin-bottom: 16px;
 }
@@ -860,7 +957,7 @@ background: var(--darkPurple-background);
     flex-shrink: 0;
     background: var(--darkPurple-background);
     border-radius: 8px;
-    border: 1px solid var(--water-dark);
+    border: 1px solid var(--highlight);
     margin: 3px 0 3px 0;
 }
 
@@ -870,16 +967,21 @@ background: var(--darkPurple-background);
     position: relative;
     z-index: 2;
     border-radius: 8px;
-    border: 1px solid var(--water-dark);
+    border: 1px solid var(--highlight);
     margin-bottom: 3px;
+}
+
+.theme-dark .panel__5dec7 {
+    /*activitypanel bg*/
+    background: var(--darkPurple-background);
 }
 
 #vc-spotify-player {
     /*spotify controller*/
     padding: 0.375rem 0.5rem;
-    --vc-spotify-green: var(--plant-green);
+    --vc-spotify-green: var(--highlight);
     border-radius: 8px;
-    border: 1px solid var(--water-dark);
+    border: 1px solid var(--highlight);
     margin-top: 3px;
     margin-bottom: 3px;
 }
@@ -918,7 +1020,7 @@ background: var(--darkPurple-background);
 }
 
 .info__2debe:last-child::after {
-    content: "Водный Атриум 1.0.0";
+    content: "Погруженный Атриум 1.0.0";
     font-size: 12px;
     line-height: 16px;
     color: rgb(var(--rgb-highlight))
@@ -1038,7 +1140,7 @@ button:has([d=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.
     border-radius: 8px;
     background-color: var(--interactive-muted);
     box-shadow: var(--elevation-low);
-    border: 1px solid var(--water-dark);
+    border: 1px solid var(--highlight);
 }
 
 .narrow_a5700d {
@@ -1150,13 +1252,13 @@ button:has([d=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.
 
 .visual-refresh .jumpToPresentBar__0f481 {
     background-color: var(--darkPurple-background);
-    border: 1px solid var(--custom-channel-icon);
+    border: 1px solid var(--channel-icon);
 }
 
 #popout_5211 {
     /* channel search input */
     border-radius: 8px;
-    border: 1px solid var(--water-dark);
+    border: 1px solid var(--highlight);
 }
 
 .container__55c99 {
@@ -1166,7 +1268,7 @@ button:has([d=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.
 
 .autocomplete__13533 {
     border-radius: 8px;
-    border: 1px solid var(--water-dark);
+    border: 1px solid var(--highlight);
     background-color: var(--darkPurple-background);
 }
 
@@ -1219,13 +1321,13 @@ button:has([d=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.
 
 .visual-refresh .container_d97f89 {
     /* poll creation */
-    border: 1px solid var(--water-dark);
+    border: 1px solid var(--highlight);
     background-color: var(--background-mentioned);
 }
 
 .checkboxSelected_f4f0eb {
     /* polls checkmarks */
-    background-color: var(--water-dark);
+    background-color: var(--highlight);
 }
 
 .votePercentageBar__4c520 {
@@ -1235,17 +1337,17 @@ button:has([d=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.
 
 .answerSelectionIcon__4c520 path[fill-rule=evenodd] {
     /* polls checkmarks */
-    fill: var(--water-dark);
+    fill: var(--highlight);
 }
 
 .victorStyles_a1443c {
     /* polls */
-    --custom-poll-style-border: var(--water-dark);
+    --custom-poll-style-border: var(--highlight);
 }
 
 .bd-switch input:checked+.bd-switch-body {
     /* BetterDiscord checkmark toggle color */
-    --switch-color: var(--plant-green);
+    --switch-color: var(--online-color);
 }
 
 .vc-addon-card {
@@ -1288,9 +1390,9 @@ button:has([d=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.
 
 .toast__3fde7 {
     /* vencord updater notification style */
-    border: 2px solid var(--plant-green);
+    border: 2px solid var(--online-color);
     border-radius: 10px;
-    background-color: rgba(26, 93, 143, 90%);
+    background-color: rgba(var(--rgb-highlight), 90%);
 }
 
 .input__0f084 {
@@ -1310,8 +1412,8 @@ button:has([d=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.
 
 .vc-notification-root {
     /* vencord update notification */
-    border: 1px solid var(--sky-blue);
-    background: rgba(26, 93, 143, 0.9);
+    border: 1px solid var(--selected-channel-color);
+    background: rgba(var(--rgb-highlight), 0.9);
 }
 
 .focusLock__49fc1 {
@@ -1328,13 +1430,13 @@ button:has([d=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.
 .bd-modal-root,
 .root__49fc1 {
     /* modal theme */
-    background: rgba(26, 93, 143, 0.8);
+    background: rgba(var(--rgb-highlight), 0.8);
     border-radius: 10px;
-    border: 1px solid var(--water-dark) !important;
+    border: 1px solid var(--highlight) !important;
 }
 .visual-refresh .container_cc2dff, .visual-refresh .reactors_cc2dff {
     /* reactions modal bg theme */
-    background: rgba(26, 93, 143, 0.8);
+    background: rgba(var(--rgb-highlight), 0.8);
 }
 
 .header_d0b769,
@@ -1347,20 +1449,20 @@ button:has([d=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.
 }
 
 .bd-button-filled.bd-button-color-red {
-    /* BetterDiscord red button -> water color */
-    background-color: var(--dnd-color);
+    /* BetterDiscord red button -> purple */
+    background-color: var(--status-danger);
 }
 .bd-button-filled.bd-button-color-red:hover {
-    /* BetterDiscord red button hover -> water color */
-    background-color: var(--water-dark);
+    /* BetterDiscord red button -> purple */
+    background-color: var(--highlight);
 }
 .bd-filled-checkmark {
-    /* BetterDiscord green checkmark -> plant green */
-    background: var(--plant-green);
+    /* BetterDiscord green checkmark -> blue */
+    background: var(--online-color);
 }
 .bd-empty-updates svg {
-    /* BetterDiscord green checkmark -> plant green */
-    fill: var(--plant-green);
+    /* BetterDiscord green checkmark -> blue */
+    fill: var(--online-color);
 }
 
 .defaultTextInputWrapper__7b848 {
@@ -1407,16 +1509,16 @@ button:has([d=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.
 .pageBody__41ed7 {
     /* channels & roles tab */
     margin-top: 10px;
-    background: rgba(26, 93, 143, 0.8);
+    background: rgba(var(--rgb-highlight), 0.8);
     border-radius: 10px;
-    border: 1px solid var(--sky-blue);
+    border: 1px solid var(--selected-channel-color);
 }
 
 .chat_f75fb0 .header__0b563 {
     /* channels & roles tab */
     background: var(--background-secondary) !important;
     border-radius: 10px;
-    border: 1px solid var(--sky-blue);
+    border: 1px solid var(--selected-channel-color);
 }
 
 .visual-refresh .header_c0e32c, .visual-refresh .inspector_aeaaeb,
@@ -1526,8 +1628,8 @@ button:has([d=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.
     background-color: var(--background-primary);
 }
 
-.avatarSpeaking__07f91, .avatarSpeaking__44b0c, .border__2f4f7.speaking__2f4f7 { /* avatar speaking circle */
-    box-shadow: inset 0 0 0 2px var(--plant-green),inset 0 0 0 3px var(--background-secondary) !important;
+.avatarSpeaking__07f91, .avatarSpeaking__44b0c, .border__2f4f7.speaking__2f4f7 { /* avatar speaking blue circle */
+    box-shadow: inset 0 0 0 2px var(--online-color),inset 0 0 0 3px var(--background-secondary) !important;
 }
 
 /* Right click menu text/hover colors */
@@ -1553,7 +1655,7 @@ button:has([d=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.
 
 .visual-refresh .container_fcf29c { /* save settings banner */
     background-color: var(--darkPurple-background);
-    border: 1px solid var(--water-dark);
+    border: 1px solid var(--highlight);
 }
 
 .visual-refresh .container_d829e7, .visual-refresh .ctaContainer_d829e7 {  /* nitro emoji bg */
@@ -1561,7 +1663,7 @@ button:has([d=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.
 }
 
 .icon_c9d15c path {
-    fill: var(--plant-green);
+    fill: var(--online-color);
 }
 
 .visual-refresh .notice__6e2b9 {
